@@ -1,0 +1,39 @@
+{
+  "name": "dishes",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "npm run build && wrangler dev",
+    "typecheck": "tsc --noEmit",
+    "import:epub": "tsx scripts/import-epub/run.ts",
+    "import:images": "tsx scripts/import-images/run.ts",
+    "import:steps": "tsx scripts/import-steps/run.ts",
+    "llm:enrich:dry": "tsx scripts/llm-enrich/run.ts",
+    "llm:enrich:full": "tsx scripts/llm-enrich/run.ts --full",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.106.0",
+    "@cloudflare/vite-plugin": "^1.40.0",
+    "@types/node": "^25.9.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "node-html-parser": "^8.0.3",
+    "sharp": "^0.35.2",
+    "tsx": "^4.22.4",
+    "typescript": "^5.6.3",
+    "vite": "^7.0.0",
+    "vitest": "^4.1.8",
+    "wrangler": "^4.98.0"
+  }
+}

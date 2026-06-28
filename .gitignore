@@ -1,0 +1,54 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.local
+
+# Vite / TypeScript / Wrangler caches
+.vite/
+.wrangler/
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test coverage
+coverage/
+
+# Environment / secrets
+# (Keys live in browser localStorage, not files — but never commit env files.)
+.env
+.env.*
+!.env.example
+
+# Editors
+.idea/
+*.swp
+*.swo
+
+# App data lives in a separate private repo (dishes-data), fetched at runtime via
+# the GitHub API — never in this repo. Ignore any local data/ scratch dir.
+/data/
+
+# Generated cookbook corpus bundled for live-load (copyrighted recipe text — the
+# canonical copy lives in dishes-data). Regenerate with `npm run import:epub`.
+app/src/data/cookbookRecipes.json
+
+# Scraped recipe photos + the title→image map (copyrighted). Regenerate with
+# `npm run import:images`.
+app/public/recipe-images/
+app/src/data/recipeImages.json
+
+# Scraped procedure steps (copyrighted). Regenerate with `npm run import:steps`.
+app/src/data/recipeSteps.json
+
+# The npm package lives in app/ — guard against a stray root manifest/lockfile.
+/package.json
+/package-lock.json

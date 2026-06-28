@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cooking app — screen mockups (handoff)</title>
+<style>
+:root{
+  --paper:#FAF8F3; --card:#FFFFFF; --ink:#26241F; --ink2:#6E6A61; --ink3:#A19C90;
+  --bd:#E7E3D9; --bd2:#D6D1C4;
+  --sel:#EFEDE5; --selink:#2C2A25;
+  --herb:#3F6B3A; --herbbg:#E9F1E4;
+  --amber:#85510C; --amberbg:#F8EDDA;
+  --teal:#0A5043; --tealbg:#E2F3EC;
+  --plum:#473B8A; --plumbg:#ECEAF9;
+  --blue:#10497E; --bluebg:#E7F0FA;
+  --red:#7C2121; --redbg:#FBEAEA;
+  --green:#3B6D11;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:48px 16px 80px;background:var(--paper);color:var(--ink);
+  font:15px/1.55 -apple-system,"Segoe UI",system-ui,Helvetica,Arial,sans-serif}
+.wrap{max-width:780px;margin:0 auto}
+header.doc h1{font:600 26px/1.2 Georgia,'Times New Roman',serif;margin:0 0 6px}
+header.doc p{color:var(--ink2);max-width:640px;margin:4px 0}
+nav.toc{font-size:13px;color:var(--ink2);margin:18px 0 56px;line-height:2}
+nav.toc a{color:var(--herb);text-decoration:none;margin-right:14px;white-space:nowrap}
+section{margin:0 0 64px;scroll-margin-top:24px}
+section>h2{font:600 19px/1.3 Georgia,serif;margin:0 0 4px;border-top:1px solid var(--bd2);padding-top:28px}
+section>p.cap{color:var(--ink2);font-size:14px;max-width:660px;margin:4px 0 18px}
+.ann{max-width:660px;background:transparent;border-left:2px solid var(--bd2);padding:2px 0 2px 14px;
+  font-size:13px;color:var(--ink2);margin:16px auto 0}
+.ann b{color:var(--ink);font-weight:600}
+.phone{width:392px;max-width:100%;margin:0 auto;background:var(--card);
+  border:1px solid var(--bd);border-radius:26px;padding:20px;box-shadow:0 1px 2px rgba(40,36,28,.04)}
+.t1{font-size:20px;font-weight:600;margin:0}
+.t2{font-size:12px;font-weight:600;color:var(--ink2);margin:0 0 8px;letter-spacing:.02em}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.m{color:var(--ink2)} .h{color:var(--ink3)}
+.sm{font-size:13px}.xs{font-size:12px}.xxs{font-size:11px}
+p{margin:0}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:12px;padding:4px 11px;border-radius:99px;
+  border:1px solid var(--bd);color:var(--ink2);background:transparent;white-space:nowrap}
+.chip.on{background:var(--sel);border-color:var(--sel);color:var(--selink);font-weight:600}
+.chip.herb{background:var(--herbbg);border-color:var(--herbbg);color:var(--herb);font-weight:600}
+.chip.amber{background:var(--amberbg);border-color:var(--amberbg);color:var(--amber)}
+.chip.teal{background:var(--tealbg);border-color:var(--tealbg);color:var(--teal)}
+.chip.plum{background:var(--plumbg);border-color:var(--plumbg);color:var(--plum)}
+.chip.blue{background:var(--bluebg);border-color:var(--bluebg);color:var(--blue)}
+.chip.red{background:var(--redbg);border-color:var(--redbg);color:var(--red);font-weight:600}
+.chip.xxs{font-size:11px;padding:3px 8px}
+.card{border:1px solid var(--bd);border-radius:14px;padding:13px 14px;margin:0 0 10px}
+.card.sel{border-color:var(--bd2);border-width:1.5px}
+.banner{border-radius:10px;padding:10px 13px;margin:0 0 14px}
+.banner.blue{background:var(--bluebg);color:var(--blue)}
+.banner.herb{background:var(--herbbg);color:var(--herb)}
+.banner.gray{background:var(--sel);color:var(--ink2)}
+.btn{display:inline-block;font-size:13px;padding:7px 14px;border:1px solid var(--bd2);
+  border-radius:9px;background:var(--card);color:var(--ink);cursor:default;text-align:center}
+.btn.wide{display:block;width:100%;font-weight:600}
+.btn.ghost{border:none;color:var(--ink2);background:transparent;font-weight:400}
+.btn.xs{font-size:12px;padding:4px 10px}
+.list>.row{padding:8px 0;border-bottom:1px solid var(--bd)}
+.list>.row:last-child{border-bottom:none}
+.foot{font-size:11px;color:var(--ink3);text-align:center;border-top:1px solid var(--bd);
+  padding-top:10px;margin-top:14px}
+.navbar{display:flex;border-top:1px solid var(--bd);margin:18px -20px -20px;padding:10px 6px 16px}
+.nav-i{flex:1;text-align:center;font-size:11px;color:var(--ink3)}
+.nav-i.on{color:var(--ink);font-weight:600}
+.nav-i .ic{display:block;width:22px;height:22px;margin:0 auto 3px;border:1.5px solid currentColor;border-radius:7px;opacity:.85}
+.nav-i.on .ic{background:var(--sel)}
+.mi{display:inline-flex;align-items:center;justify-content:center;width:34px;height:30px;
+  border:1px solid var(--bd);border-radius:9px;font-size:12px;color:var(--ink3);font-weight:600}
+.mi.on{background:var(--sel);border-color:var(--sel);color:var(--selink)}
+.mi.dash{border-style:dashed}
+.step{display:inline-flex;align-items:center;gap:10px}
+.step .b{font-size:13px;padding:1px 10px;border:1px solid var(--bd2);border-radius:7px}
+.bar{height:5px;background:var(--sel);border-radius:99px;overflow:hidden}
+.bar>i{display:block;height:5px;background:var(--plum);border-radius:99px}
+.metric{background:var(--paper);border-radius:10px;padding:10px 12px}
+.metric .n{font-size:20px;font-weight:600}
+.metric .l{font-size:11px;color:var(--ink2)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.dot{font-size:12px}
+.dot.amb{color:#C07A1B}.dot.open{color:var(--ink3)}
+.shelf{background:var(--paper);border:1px solid var(--bd);border-radius:7px;
+  padding:6px 8px;margin:0 0 4px;font-size:11px;line-height:1.35}
+.shelf.warn{background:var(--amberbg);border-color:#E8CFA4;color:var(--amber);font-weight:600}
+.kcol p.kh{font-size:11px;font-weight:600;color:var(--ink2);text-align:center;margin:0 0 4px}
+.qc{display:flex;gap:3px}
+.qc span{font-size:11px;padding:2px 8px;border-radius:99px;border:1px solid var(--bd);color:var(--ink3)}
+.qc span.on{background:var(--sel);border-color:var(--sel);color:var(--selink);font-weight:600}
+.thumb{width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#DCE8D2,#B9CFAA);
+  border:1px solid var(--bd);flex:none}
+.thumb.dim{background:linear-gradient(135deg,#EAE7DE,#D8D4C8)}
+.serif{font-family:Georgia,'Times New Roman',serif}
+.slot-pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 9px;border-radius:7px;background:var(--sel);color:var(--selink)}
+.slot-pill.plum{background:var(--plumbg);color:var(--plum)}
+.slot-pill.dash{background:transparent;border:1px dashed var(--bd2);color:var(--ink3)}
+.daylbl{font-size:12px;color:var(--ink3);width:36px;flex:none;font-weight:600}
+.ctl{color:var(--ink3);font-size:14px;letter-spacing:6px}
+.lockwrap{width:392px;max-width:100%;margin:0 auto;background:#1B1D22;border-radius:26px;padding:44px 18px 60px;color:#E8E9EC}
+.lock-time{font:300 56px/1 -apple-system,system-ui,sans-serif;text-align:center;margin:0}
+.lock-date{font-size:14px;text-align:center;color:#9AA0AC;margin:4px 0 36px}
+.notif{background:rgba(248,247,243,.96);color:var(--ink);border-radius:18px;padding:13px 15px}
+.notif .app{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--ink2);margin-bottom:6px}
+.notif .appic{width:18px;height:18px;border-radius:5px;background:var(--herb)}
+@media (max-width:430px){body{padding:32px 10px 60px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="doc">
+  <h1>Cooking app — screen mockups</h1>
+  <p>Fifteen screens for the personal cooking app, mobile breakpoint (390px). Directional, not pixel-perfect: hierarchy, copy tone, and behavior annotations are the spec; exact spacing is not. See <code>requirements.md</code> for full feature behavior and <code>README.md</code> for precedence rules.</p>
+  <p>Design voice: a quiet, attentive household member. Warm paper surfaces, one herb-green accent, serif reserved for personal-memory material (cook notes, past obsessions). No dashboards, no streaks.</p>
+</header>
+<nav class="toc">
+  <a href="#shell">1 Today + shell</a><a href="#run-planner">2 Run planner</a><a href="#week">3 Plan (week)</a>
+  <a href="#kitchen">4 Kitchen map</a><a href="#inventory">5 Expiry list</a><a href="#garden">6 Garden page</a>
+  <a href="#harvest">7 Harvest confirm</a><a href="#plant">8 Plant a yCube</a><a href="#notification">9 Push notification</a>
+  <a href="#browser">10 Recipe browser</a><a href="#recipe">11 Recipe detail</a><a href="#cooklog">12 Done cooking</a>
+  <a href="#into">13 Currently into</a><a href="#import">14 Import</a><a href="#settings">15 Settings</a>
+</nav>
+
+<section id="shell">
+  <h2>1 · Today — home screen, inside the app shell</h2>
+  <p class="cap">The default landing surface and the bottom-nav shell. Day tabs scroll horizontally; meal type defaults from the clock; genre and nutrition chips are one-shot biases for this decision only. The garden tile and a garden-named suggestion satisfy the addendum's home-screen integration requirement. Settings gear lives in this header.</p>
+  <div class="phone">
+    <div class="row" style="margin-bottom:10px">
+      <p class="t1">Tonight</p>
+      <p class="xs h">Thu, Jun 11 &nbsp;·&nbsp; ⚙</p>
+    </div>
+    <div class="chips" style="margin-bottom:12px">
+      <span class="chip on">Today</span><span class="chip">Fri 12</span><span class="chip">Sat 13</span><span class="chip">Sun 14</span><span class="chip">Mon 15</span>
+    </div>
+    <div class="row" style="margin-bottom:12px">
+      <span style="display:flex;gap:4px">
+        <span class="mi">B</span><span class="mi">L</span><span class="mi on">D</span><span class="mi">Z</span>
+      </span>
+      <span class="xs h">Dinner · it's 6:40pm</span>
+    </div>
+    <div class="row" style="margin-bottom:12px">
+      <span class="sm m">Cooking for</span>
+      <span class="step"><span class="b">−</span><b>2</b><span class="b">＋</span><span class="xs h">guests? bump it</span></span>
+    </div>
+    <div class="chips" style="margin-bottom:8px">
+      <span class="chip on">Anything</span><span class="chip">Noodles</span><span class="chip">Soup-y</span><span class="chip">Korean</span><span class="chip">Italian</span>
+    </div>
+    <div class="chips" style="margin-bottom:16px">
+      <span class="chip">Tired</span><span class="chip on">Normal</span><span class="chip">Ambitious</span>
+      <span class="chip teal">✓ One vessel</span><span class="chip plum">Protein ≥ 50% DV</span>
+    </div>
+    <div class="banner blue row">
+      <span class="sm"><b>Tuesday's chili — 2 servings in the fridge.</b> Best by tomorrow.</span>
+      <span class="btn xs">Claim it</span>
+    </div>
+    <div class="card sel">
+      <p style="font-size:16px;font-weight:600;margin-bottom:4px">Caprese with garden basil</p>
+      <p class="xs h" style="margin-bottom:10px">Your time ~15 min · no-cook · ~21 g protein (42% DV, est.)</p>
+      <div class="chips" style="margin-bottom:12px">
+        <span class="chip xxs herb">Uses the basil that's ready in your garden</span>
+        <span class="chip xxs amber">Mozzarella from Tuesday</span>
+      </div>
+      <span class="btn wide">Cook this</span>
+    </div>
+    <div class="card">
+      <p style="font-size:16px;font-weight:600;margin-bottom:4px">Edamame fried rice</p>
+      <p class="xs h" style="margin-bottom:10px">Your time ~35 min · wok only · ~28 g protein (56% DV, est.)</p>
+      <div class="chips" style="margin-bottom:12px">
+        <span class="chip xxs plum">Edamame obsession ×1.8</span>
+        <span class="chip xxs amber">Uses day-old rice</span>
+      </div>
+      <span class="btn wide" style="font-weight:400">Cook this</span>
+    </div>
+    <p style="text-align:center;margin:4px 0 12px"><span class="btn ghost xs">Neither — ask me one question ↗</span></p>
+    <div class="banner herb row" style="margin-bottom:0">
+      <span class="sm"><b>Garden:</b> 3 ready · 2 ripening soon</span>
+      <span class="xs">View ›</span>
+    </div>
+    <p class="foot">Walmart synced 2 days ago · garden 1 hr ago · 31 items tracked</p>
+    <div class="navbar">
+      <span class="nav-i on"><span class="ic"></span>Today</span>
+      <span class="nav-i"><span class="ic"></span>Plan</span>
+      <span class="nav-i"><span class="ic"></span>Kitchen</span>
+      <span class="nav-i"><span class="ic"></span>Recipes</span>
+    </div>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> Max two suggestion cards plus the leftovers banner — never more. "Neither" asks exactly one clarifying question (LLM), then re-suggests; it never expands into a list. Genre and nutrition chips reset after this decision; energy and one-vessel persist for the day. Deep links from harvest notifications land here with the garden suggestion (card 1) pre-selected. Tabbing to a future day shows that day's slots with pin/pre-fill actions. Freshness footer is mandatory on this screen; when Walmart sync &gt; 7 days, it escalates to a visible staleness banner.
+  </div>
+</section>
+
+<section id="run-planner">
+  <h2>2 · Grocery run planner (sheet)</h2>
+  <p class="cap">A run is a query over the meal-slot timeline: shop whenever, pick a coverage horizon, the app resolves planned slots + auto-fill basics + cadence staples minus inventory. Reached from Today's "Plan a grocery run" or the Plan tab.</p>
+  <div class="phone">
+    <p class="t1" style="margin-bottom:14px">Plan a run</p>
+    <p class="t2">Shopping when?</p>
+    <div class="chips" style="margin-bottom:14px">
+      <span class="chip on">Right now</span><span class="chip">Tomorrow</span><span class="chip">Saturday am</span>
+    </div>
+    <p class="t2">Cover through</p>
+    <div class="chips" style="margin-bottom:6px">
+      <span class="chip">+2 days</span><span class="chip on">Sunday</span><span class="chip">+7 days</span>
+    </div>
+    <p class="xs h" style="margin-bottom:14px">Tonight → Sunday dinner · 5 slots planned, breakfasts assumed from staples</p>
+    <div class="card list">
+      <div class="row"><span class="sm">Thu dinner — caprese, garden basil</span><span class="xs" style="color:var(--green)">all on hand</span></div>
+      <div class="row"><span class="sm">Fri dinner — fried rice (leftovers Sat lunch)</span><span class="xs" style="color:var(--amber)">1 item</span></div>
+      <div class="row"><span class="sm">Sat dinner — paella · <span style="color:var(--plum)">6 portions, guests</span></span><span class="xs" style="color:var(--amber)">5 items</span></div>
+      <div class="row"><span class="sm">Sun dinner — auto-fills closer to the day</span><span class="xs h">flexible basics</span></div>
+    </div>
+    <div class="grid3" style="margin:12px 0">
+      <div class="metric"><p class="l">Already have</p><p class="n">11</p></div>
+      <div class="metric"><p class="l">Need to buy</p><p class="n">8</p></div>
+      <div class="metric"><p class="l">Staples low</p><p class="n">2</p></div>
+    </div>
+    <p class="xs h" style="margin-bottom:14px">Staples riding along: olive oil, paper towels — both near their usual rebuy point.</p>
+    <span class="btn wide">Build list &amp; route it</span>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> Auto-fill slots contribute flexible base ingredients (rice, eggs, an all-purpose protein), not a committed recipe. Guest portions on pinned slots scale that slot's quantities only. Overlapping runs are legal — both read the same timeline; bought items are marked at completion and inventory updates. "Build list &amp; route it" hands the buy-list to the store router (requirements §7.13) with the stops-willing input.
+  </div>
+</section>
+
+<section id="week">
+  <h2>3 · Plan tab — week window with slot controls</h2>
+  <p class="cap">A wider window onto the same meal slots. Per-day regenerate ↻ and skip ✕; filled pills show meals; dashed pills are empty add-buttons for breakfast/lunch. Dinner is the only auto-filling slot.</p>
+  <div class="phone">
+    <div class="row" style="margin-bottom:12px">
+      <p class="t1">This week</p><span class="btn xs">↻ Regenerate week</span>
+    </div>
+    <div class="card">
+      <div class="row" style="margin-bottom:7px"><span class="sm"><b>Thu</b> <span class="xxs h">today</span></span><span class="ctl">↻ ✕</span></div>
+      <div class="chips"><span class="slot-pill dash">B ＋</span><span class="slot-pill dash">L ＋</span><span class="slot-pill">D · Caprese, garden basil</span></div>
+    </div>
+    <div class="card">
+      <div class="row" style="margin-bottom:7px"><span class="sm"><b>Fri</b></span><span class="ctl">↻ ✕</span></div>
+      <div class="chips"><span class="slot-pill dash">B ＋</span><span class="slot-pill dash">L ＋</span><span class="slot-pill">D · Edamame fried rice</span></div>
+    </div>
+    <div class="card">
+      <div class="row" style="margin-bottom:7px"><span class="sm"><b>Sat</b></span><span class="ctl">↻ ✕</span></div>
+      <div class="chips"><span class="slot-pill">L · Fried-rice leftovers</span><span class="slot-pill plum">D · Paella · 6 portions ⚲</span></div>
+    </div>
+    <div class="card" style="background:var(--paper)">
+      <div class="row"><span class="sm m">Sun — skipped, dinner out</span><span class="xs m" style="text-decoration:underline">undo</span></div>
+    </div>
+    <div class="card" style="margin-bottom:14px">
+      <div class="row" style="margin-bottom:7px"><span class="sm"><b>Mon</b></span><span class="ctl">↻ ✕</span></div>
+      <div class="chips"><span class="slot-pill dash">B ＋</span><span class="slot-pill dash">L ＋</span><span class="slot-pill dash">D · auto-fills Sunday night</span></div>
+    </div>
+    <p class="foot" style="border:none;padding:0">Edits flow straight into the next grocery run — no separate sync step</p>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> ↻ regenerates that day's non-pinned, non-skipped slots only; ⚲ marks a pinned slot, which regeneration never touches. Skip removes the day's slots from run coverage and keeps an undo affordance. Empty B/L pills create a slot on tap (picker: suggest / browse / leftovers). Portion badges render only when ≠ household default of 2.
+  </div>
+</section>
+
+<section id="kitchen">
+  <h2>4 · Kitchen › Map — spatial inventory, glance audit</h2>
+  <p class="cap">A map, not a list: the layout mirrors the household's actual side-by-side unit (freezer 4 shelves; fridge 6 shelves, bottom-up veg / meat / cheese-dairy / 3× general; door 5, top-down butter / sauces ×3 / drinks), plus the two-shelf pantry and the counter produce basket. Amber ● = something expiring on that shelf; hollow ○ = something unconfirmed. Tap a shelf for the detail card with one-second quantity edits.</p>
+  <div class="phone">
+    <div class="row" style="margin-bottom:2px">
+      <p class="t1">Kitchen</p>
+      <span class="xxs h"><span class="dot amb">●</span> expiring &nbsp;<span class="dot open">○</span> not sure</span>
+    </div>
+    <div class="chips" style="margin:8px 0 12px">
+      <span class="chip on">Map</span><span class="chip">Expiry</span><span class="chip">Garden</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1.05fr 1.25fr .85fr;gap:8px;margin-bottom:12px">
+      <div class="kcol"><p class="kh">❄ Freezer</p>
+        <div class="shelf">Frozen meals · 3 <span style="color:var(--blue)">incl. chili</span></div>
+        <div class="shelf">Meat · 4</div>
+        <div class="shelf">Veg &amp; edamame · 5</div>
+        <div class="shelf">Odds &amp; ends · 6 <span class="dot open">○</span></div>
+      </div>
+      <div class="kcol"><p class="kh">Fridge</p>
+        <div class="shelf m">Shelf 6 · 2</div>
+        <div class="shelf m">Shelf 5 · 4 <span class="dot open">○</span></div>
+        <div class="shelf m">Shelf 4 · 3</div>
+        <div class="shelf">Cheese &amp; dairy · 6 <span class="dot amb">●</span></div>
+        <div class="shelf">Meat · 2</div>
+        <div class="shelf warn">Veg · 5 <span class="dot amb">●●</span></div>
+      </div>
+      <div class="kcol"><p class="kh">Door</p>
+        <div class="shelf">Butter · 2</div>
+        <div class="shelf">Sauces · 7 <span class="dot open">○</span></div>
+        <div class="shelf">Sauces · 5</div>
+        <div class="shelf">Sauces · 4 <span class="dot open">○</span></div>
+        <div class="shelf">Drinks &amp; wine · 3</div>
+      </div>
+    </div>
+    <div class="card" style="border-color:#E8CFA4">
+      <p class="t2" style="color:var(--ink)">Veg shelf (bottom)</p>
+      <div class="row" style="padding:4px 0">
+        <span class="sm">Swiss chard <span class="xxs" style="color:var(--amber)">2 days</span></span>
+        <span class="qc"><span>Full</span><span class="on">½</span><span>Low</span><span>Gone</span></span>
+      </div>
+      <div class="row" style="padding:4px 0">
+        <span class="sm">Half onion <span class="xxs" style="color:var(--amber)">3 days</span></span>
+        <span class="qc"><span>Full</span><span>½</span><span class="on">Low</span><span>Gone</span></span>
+      </div>
+      <div class="row" style="padding:4px 0">
+        <span class="sm">Cucumbers ×2</span>
+        <span class="qc"><span class="on">Full</span><span>½</span><span>Low</span><span>Gone</span></span>
+      </div>
+    </div>
+    <div class="grid2" style="margin-bottom:12px">
+      <div class="metric"><p class="l">Pantry</p><p class="xs" style="margin-top:4px">Top — baking · 8<br>Bottom — pasta, cans · 14</p></div>
+      <div class="metric"><p class="l">Produce basket</p><p class="xs" style="margin-top:4px">Potatoes, onions, garlic · 5 <span class="dot open">○</span></p></div>
+    </div>
+    <div class="banner gray" style="margin:0">
+      <span class="xs">Door check overdue — 3 sauces unconfirmed for 60+ days. Two-minute audit?</span>
+    </div>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> Quantity chips are the primary "how much is left" input (full/half/low/gone — coarse on purpose); edits set confidence to certain and stamp last_confirmed_at. New purchases auto-land on their category's home shelf and queue a put-away confirm after a completed run. Freezer shelves show no expiry clocks (clock paused). Zone layout is editable in Settings, so the map always matches reality. On ≥768px viewports the shelf detail renders beside the map, not below.
+  </div>
+</section>
+
+<section id="inventory">
+  <h2>5 · Kitchen › Expiry — urgency-sorted list</h2>
+  <p class="cap">The other lens on the same inventory: sorted by what needs eating, confidence shown honestly, garden-ready items presented as part of the kitchen. The quick-audit card is the cheap correction loop.</p>
+  <div class="phone">
+    <p class="t1" style="margin-bottom:8px">In the kitchen</p>
+    <div class="chips" style="margin-bottom:14px">
+      <span class="chip">Map</span><span class="chip on">Expiry</span><span class="chip">Garden</span>
+    </div>
+    <p class="t2" style="color:var(--amber)">Use in 3 days</p>
+    <div class="list" style="margin-bottom:14px">
+      <div class="row"><span class="sm">Swiss chard, 1 bunch</span><span class="xs" style="color:var(--amber)">2 days · likely</span></div>
+      <div class="row"><span class="sm">Chili (leftover) · 2 servings</span><span class="xs" style="color:var(--amber)">1 day · certain</span></div>
+      <div class="row"><span class="sm">Half onion</span><span class="xs h">3 days · maybe</span></div>
+    </div>
+    <p class="t2">Use this week</p>
+    <div class="list" style="margin-bottom:14px">
+      <div class="row"><span class="sm">Edamame, shelled · ~1.5 bags</span><span class="xs h">6 days · likely</span></div>
+      <div class="row"><span class="sm">Greek yogurt · 32 oz</span><span class="xs h">7 days · likely</span></div>
+      <div class="row"><span class="sm">Fresh mozzarella</span><span class="xs h">5 days · certain</span></div>
+    </div>
+    <p class="t2" style="color:var(--herb)">Garden — ready to pick</p>
+    <div class="banner herb" style="margin-bottom:14px">
+      <div class="row" style="padding:2px 0"><span class="sm">Genovese basil — slot 4</span><span class="xs">harvest now</span></div>
+      <div class="row" style="padding:2px 0"><span class="sm">Dill — slot 9</span><span class="xs">harvest now</span></div>
+      <div class="row" style="padding:2px 0"><span class="sm">Red butter lettuce — slot 12</span><span class="xs">~4 days</span></div>
+    </div>
+    <div class="card">
+      <p class="t2" style="color:var(--ink)">Quick check — still have these?</p>
+      <div class="row" style="padding:3px 0">
+        <span class="xs m">Sour cream (bought May 28)</span>
+        <span><span class="btn xs">Yes</span> <span class="btn xs">Gone</span></span>
+      </div>
+      <div class="row" style="padding:3px 0">
+        <span class="xs m">Cilantro (bought Jun 2)</span>
+        <span><span class="btn xs">Yes</span> <span class="btn xs">Gone</span></span>
+      </div>
+    </div>
+    <p class="foot" style="border:none">23 stable pantry items hidden · <u>show all</u></p>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> Tapping any expiring item opens "use it up": the single recipe that consumes the most of it (one answer, not a list). Garden rows here are read-only status; harvest confirmation happens on the Garden segment. Audit answers update quantity_state and confidence immediately. Confidence labels are never hidden — "maybe" is a legitimate state to display.
+  </div>
+</section>
+
+<section id="garden">
+  <h2>6 · Kitchen › Garden — the garden page</h2>
+  <p class="cap">The addendum's single garden surface: all slots with variety, planted date, status, and thumbnail. One "ready" row and one "needs pruning" row shown per spec. The pruning badge lives here, not in push. Most days this page is never opened — garden data flows into Today automatically.</p>
+  <div class="phone">
+    <div class="row" style="margin-bottom:8px">
+      <p class="t1">Garden</p>
+      <span class="btn xs">＋ Plant a yCube</span>
+    </div>
+    <div class="chips" style="margin-bottom:12px">
+      <span class="chip">Map</span><span class="chip">Expiry</span><span class="chip on">Garden</span>
+    </div>
+    <div class="banner gray row" style="margin-bottom:12px">
+      <span class="xs">1 pruning flag · basil encroaching slot 5</span><span class="xs">view ↓</span>
+    </div>
+    <div class="card" style="border-color:#BFD8B4;background:#FBFDF9">
+      <div class="row">
+        <span class="thumb"></span>
+        <span style="flex:1;margin-left:10px">
+          <p class="sm"><b>Genovese basil</b> · slot 4</p>
+          <p class="xxs h">planted Apr 28 · 44 days</p>
+        </span>
+        <span style="text-align:right">
+          <span class="chip xxs herb">Ready</span>
+          <p class="xxs h" style="margin-top:4px">tap to harvest</p>
+        </span>
+      </div>
+    </div>
+    <div class="card" style="border-color:#E8CFA4">
+      <div class="row">
+        <span class="thumb"></span>
+        <span style="flex:1;margin-left:10px">
+          <p class="sm"><b>Genovese basil</b> · slot 5</p>
+          <p class="xxs h">planted Apr 28 · 44 days</p>
+        </span>
+        <span style="text-align:right">
+          <span class="chip xxs amber">Needs pruning</span>
+          <p class="xxs h" style="margin-top:4px">crowding slot 6</p>
+        </span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <span class="thumb"></span>
+        <span style="flex:1;margin-left:10px">
+          <p class="sm"><b>Dill</b> · slot 9</p>
+          <p class="xxs h">planted May 2 · 40 days</p>
+        </span>
+        <span class="chip xxs herb">Ready</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <span class="thumb"></span>
+        <span style="flex:1;margin-left:10px">
+          <p class="sm"><b>Red butter lettuce</b> · slot 12</p>
+          <p class="xxs h">planted May 14 · 28 days</p>
+        </span>
+        <span class="chip xxs teal">Nearing ready</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <span class="thumb dim"></span>
+        <span style="flex:1;margin-left:10px">
+          <p class="sm"><b>Cherry tomato</b> · slot 1</p>
+          <p class="xxs h">planted May 30 · 12 days</p>
+        </span>
+        <span class="chip xxs">Growing</span>
+      </div>
+    </div>
+    <div class="card" style="border-style:dashed">
+      <div class="row">
+        <span class="thumb dim" style="opacity:.4"></span>
+        <span style="flex:1;margin-left:10px"><p class="sm m">Slot 7 — empty</p></span>
+        <span class="xs m" style="text-decoration:underline">plant</span>
+      </div>
+    </div>
+    <p class="foot" style="border:none">+ 10 more slots · vision check ran 7:05 am</p>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> Tapping a Ready row opens the harvest confirmation (next mock). Status values: empty / growing / nearing ready / ready / needs pruning / harvested. Pruning issues badge here and push only if flagged urgent. No care guides, no sensors, no ordering — scope fence per requirements §8. Thumbnails are the latest daily snapshot; vision runs once daily as one batched call.
+  </div>
+</section>
+
+<section id="harvest">
+  <h2>7 · Harvest confirmation — the garden→kitchen handoff</h2>
+  <p class="cap">The most important moment in the garden feature. Confirming moves the food from a slot into the kitchen with a freshness clock and makes it immediately suggestible; the slot resets and its vision checks pause.</p>
+  <div class="phone" style="background:var(--paper)">
+    <div style="height:60px"></div>
+    <div style="background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:18px">
+      <p class="t1" style="margin-bottom:2px">Harvest the basil?</p>
+      <p class="xs h" style="margin-bottom:14px">Slot 4 · Genovese basil · planted Apr 28</p>
+      <div class="banner herb" style="margin-bottom:12px">
+        <p class="sm"><b>Into the kitchen:</b> fresh basil, ~1 generous bunch</p>
+        <p class="xs" style="margin-top:3px">Fresh for ~4 days · lands on the veg shelf · available to tonight's suggestions immediately</p>
+      </div>
+      <div class="list" style="margin-bottom:14px">
+        <div class="row"><span class="xs m">Slot 4</span><span class="xs">resets to empty</span></div>
+        <div class="row"><span class="xs m">Daily vision check</span><span class="xs">pauses until replanted</span></div>
+        <div class="row"><span class="xs m">Tonight</span><span class="xs">caprese suggestion already queued</span></div>
+      </div>
+      <span class="btn wide" style="margin-bottom:8px">Confirm harvest</span>
+      <span class="btn wide ghost">Not yet</span>
+    </div>
+    <div style="height:40px"></div>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> Confirm executes one transaction (data-model.md, harvest invariant): inventory insert with category shelf life from the yCube catalog, home-shelf zone assignment, slot → empty, vision_paused = 1. Partial harvests (herbs that keep producing) are a deliberate non-goal for V1 — confirm means the slot is done; note this limitation in the UI copy if it confuses in practice.
+  </div>
+</section>
+
+<section id="plant">
+  <h2>8 · Plant a new yCube — under 15 seconds</h2>
+  <p class="cap">Tap the slot on a device diagram, pick the variety (recents first), date auto-stamps. This per-slot context is what makes the daily vision pipeline accurate.</p>
+  <div class="phone">
+    <p class="t1" style="margin-bottom:2px">Plant a yCube</p>
+    <p class="xs h" style="margin-bottom:14px">Tap the slot you used</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:14px">
+      <span class="mi" style="width:auto;height:38px">1</span><span class="mi" style="width:auto;height:38px">2</span><span class="mi" style="width:auto;height:38px">3</span><span class="mi" style="width:auto;height:38px">4</span>
+      <span class="mi" style="width:auto;height:38px">5</span><span class="mi" style="width:auto;height:38px">6</span><span class="mi on" style="width:auto;height:38px">7</span><span class="mi" style="width:auto;height:38px">8</span>
+      <span class="mi" style="width:auto;height:38px">9</span><span class="mi" style="width:auto;height:38px">10</span><span class="mi" style="width:auto;height:38px">11</span><span class="mi" style="width:auto;height:38px">12</span>
+    </div>
+    <p class="t2">Variety</p>
+    <div style="border:1px solid var(--bd);border-radius:9px;padding:8px 12px;font-size:14px;color:var(--ink3);margin-bottom:8px">Search the yCube catalog…</div>
+    <p class="xxs h" style="margin-bottom:6px">Recent</p>
+    <div class="chips" style="margin-bottom:14px">
+      <span class="chip on">Genovese basil</span><span class="chip">Dill</span><span class="chip">Cilantro</span><span class="chip">Red butter lettuce</span>
+    </div>
+    <div class="banner gray row" style="margin-bottom:14px">
+      <span class="xs">Planting date: today, Jun 11 (auto)</span><span class="xs" style="text-decoration:underline">change</span>
+    </div>
+    <span class="btn wide">Plant basil in slot 7</span>
+    <p class="foot" style="border:none">or say: "planted basil in slot 7"</p>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> Occupied slots render disabled in the grid (tap shows what's there). Variety list = the ~120-entry yCube catalog, searchable, recents on top. Saving sets garden_slots (variety, planted_at, status = growing, vision_paused = 0). Voice entry is optional and stubbed behind a flag in V1 (requirements §15).
+  </div>
+</section>
+
+<section id="notification">
+  <h2>9 · Push notification — garden event in cooking voice</h2>
+  <p class="cap">Delivered by Home Assistant, written by the app. The critical UX rule from the addendum: it reads as a cooking decision, never device-speak. Tapping deep-links to Today with the caprese suggestion pre-selected — not to the Garden page.</p>
+  <div class="lockwrap">
+    <p class="lock-time">7:42</p>
+    <p class="lock-date">Thursday, June 11</p>
+    <div class="notif">
+      <div class="app"><span class="appic"></span> COOKING · now</div>
+      <p class="sm" style="font-weight:600;margin-bottom:2px">Basil is ready 🌿</p>
+      <p class="sm">Want a caprese tonight? You have mozzarella from Tuesday.</p>
+    </div>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> Copy template: [food] is ready — [dinner idea]? [supporting inventory fact]. Generated by one short LLM call per event, cacheable by template; never "Slot 4 status changed: ready". Deep link: app://today?suggest=recipe_id. Pruning flags do not push (badge only) unless urgent. Expiring-soon digest, if enabled, is max one per day and respects quiet hours. The app publishes to HA via MQTT/webhook; HA owns delivery — the app runs zero notification infrastructure.
+  </div>
+</section>
+
+<section id="browser">
+  <h2>10 · Recipes › Browser — mood-finding and bookmarks</h2>
+  <p class="cap">Browses the household corpus only — discovery happens at import time, never while hungry. The mood input starts a short conversation; filter chips are deterministic; the "to make" queue is a soft suggester signal that can be pinned to a slot.</p>
+  <div class="phone">
+    <p class="t1" style="margin-bottom:12px">Recipes</p>
+    <div class="row" style="margin-bottom:12px">
+      <div style="flex:1;border:1px solid var(--bd);border-radius:9px;padding:8px 12px;font-size:14px;color:var(--ink3)">What are you in the mood for?</div>
+      <span class="btn xs">Ask ↗</span>
+    </div>
+    <div class="chips" style="margin-bottom:16px">
+      <span class="chip on">Dinner</span><span class="chip on">≤35 min (your time)</span><span class="chip">One vessel</span>
+      <span class="chip">Mostly on hand</span><span class="chip">Never made</span><span class="chip">Protein ≥ 50% DV</span>
+    </div>
+    <p class="t2">To make · 3</p>
+    <div style="display:flex;gap:8px;overflow-x:auto;margin-bottom:16px;padding-bottom:2px">
+      <div class="card" style="min-width:150px;margin:0"><p class="xs" style="font-weight:600">Mapo tofu</p><p class="xxs h">Saved Jun 4 · needs doubanjiang</p></div>
+      <div class="card" style="min-width:150px;margin:0"><p class="xs" style="font-weight:600">Dill butter salmon</p><p class="xxs h">Garden dill ready now</p></div>
+      <div class="card" style="min-width:150px;margin:0"><p class="xs" style="font-weight:600">Paella</p><p class="xxs h">Pinned · Sat, 6 portions</p></div>
+    </div>
+    <p class="t2">22 matches</p>
+    <div class="list">
+      <div class="row">
+        <span><p class="sm" style="font-weight:600">Edamame fried rice</p><p class="xxs h">~35 min · wok · cooked 5× · "perfect with day-old rice"</p></span>
+        <span class="h">⌑</span>
+      </div>
+      <div class="row">
+        <span><p class="sm" style="font-weight:600">Anchovy pasta with dill</p><p class="xxs h">~25 min · one pot · cooked 2× · obsession match</p></span>
+        <span class="h">⌑</span>
+      </div>
+      <div class="row">
+        <span><p class="sm" style="font-weight:600">Sichuan blistered green beans</p><p class="xxs h">~15 min · wok · never made · from The Wok import</p></span>
+        <span class="h">⌑</span>
+      </div>
+    </div>
+    <p class="foot">Browsing your 112 recipes — nothing from the internet unless you import it</p>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> The mood conversation (LLM, mid-tier model, short) asks at most a couple of questions, then returns 1–2 picks with reasons — same no-list-of-50 contract as the suggester. ⌑ = bookmark toggle. Time filters use your-time once cook logs exist, the source's claim (with per-source discount) before that. Allergy-tier recipes never appear in default views.
+  </div>
+</section>
+
+<section id="recipe">
+  <h2>11 · Recipes › Detail — inventory-aware, "ask why", your time</h2>
+  <p class="cap">Ingredients check against live inventory; the household's own time and notes outrank the source's claims; every step carries the ask-why affordance (LLM, cached forever). The nutrition line is the only nutrition surface here.</p>
+  <div class="phone">
+    <p class="t1" style="margin-bottom:6px">Edamame fried rice</p>
+    <div class="chips" style="margin-bottom:6px">
+      <span class="chip xxs">Wok</span><span class="chip xxs">Cleanup: low</span><span class="chip xxs">Your time ~35 min</span><span class="chip xxs">Cooked 5×</span><span class="chip xxs">Dinner · late-night</span>
+    </div>
+    <p class="xxs h" style="margin-bottom:12px">Blog claims 20 min — your kitchen says otherwise · ~28 g protein / portion · 56% of your DV (est.)</p>
+    <div class="banner" style="background:var(--amberbg);color:var(--amber);margin-bottom:14px">
+      <p class="xxs" style="font-weight:600;margin-bottom:3px">Your past notes</p>
+      <p class="sm serif" style="line-height:1.6">Mar 14 — too much soy, cap at 2 tbsp<br>Apr 2 — perfect with day-old rice</p>
+    </div>
+    <p class="t2">Ingredients · for 2</p>
+    <div class="list" style="margin-bottom:14px">
+      <div class="row"><span class="sm">✓ 3 cups day-old rice</span><span class="xxs h">have</span></div>
+      <div class="row"><span class="sm">✓ 1 cup shelled edamame</span><span class="xxs h">have</span></div>
+      <div class="row"><span class="sm">✓ 2 eggs · 2 tbsp soy · garlic</span><span class="xxs h">have</span></div>
+      <div class="row"><span class="sm" style="color:var(--amber)">◌ Scallions</span><span class="xxs" style="color:var(--amber)">on this week's list</span></div>
+    </div>
+    <p class="t2">Steps</p>
+    <div class="list" style="margin-bottom:6px">
+      <div class="row"><span class="sm" style="flex:1"><span class="h">1</span>&nbsp; Heat wok until just smoking, then add oil.</span><span class="btn xs">why?</span></div>
+      <div style="padding:8px 0;border-bottom:1px solid var(--bd)">
+        <div class="row"><span class="sm" style="flex:1"><span class="h">2</span>&nbsp; Add day-old rice, pressing into the hot surface.</span><span class="btn xs" style="background:var(--sel)">why?</span></div>
+        <div class="banner blue" style="margin:8px 0 0 18px"><p class="xs" style="line-height:1.6">Day-old rice has dried out, so grains stay separate and crisp instead of steaming into mush. Fresh rice releases moisture and clumps.</p></div>
+      </div>
+      <div class="row"><span class="sm" style="flex:1"><span class="h">3</span>&nbsp; Push rice aside, scramble eggs, fold together with edamame and soy.</span><span class="btn xs">why?</span></div>
+    </div>
+    <span class="btn wide" style="margin-top:10px">Done cooking — leave a note</span>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> Why answers are cached per (recipe, step, normalized question) — each costs one API call ever; prompt caching covers multi-why sessions. Portions control (from Today or the slot) scales ingredient lines. Any in-recipe timers default 5 minutes short of the claim to encourage looking and smelling. Serif styling marks personal-memory material (past notes) apart from utility UI — keep this convention app-wide.
+  </div>
+</section>
+
+<section id="cooklog">
+  <h2>12 · Done cooking (sheet) — time truth, leftovers, two palates</h2>
+  <p class="cap">Three inputs, all one-tap where possible: how long it actually took (chips anchored to history), where leftovers went (fridge needs a count, freezer doesn't), and a one-line note. Save's side effects are stated, not hidden.</p>
+  <div class="phone">
+    <p class="t1" style="margin-bottom:2px">Done cooking</p>
+    <p class="xs h" style="margin-bottom:16px">Edamame fried rice · Thu, Jun 11</p>
+    <p class="t2">How long did it actually take?</p>
+    <p class="xxs h" style="margin-bottom:8px">Recipe claims 20 min active. Your past cooks: ~30.</p>
+    <div class="chips" style="margin-bottom:16px">
+      <span class="chip">About right (20)</span><span class="chip on">~35 min</span><span class="chip">~50 min</span><span class="chip">Way off — enter</span>
+    </div>
+    <p class="t2">Leftovers?</p>
+    <div class="chips" style="margin-bottom:6px">
+      <span class="chip">None</span><span class="chip blue" style="font-weight:600">Fridge</span><span class="chip">❄ Freezer</span>
+    </div>
+    <p class="xxs h" style="margin-bottom:10px">Freezer skips the count — it joins your freezer meals, no clock.</p>
+    <div class="banner blue" style="margin-bottom:16px">
+      <div class="row" style="margin-bottom:4px">
+        <span class="sm" style="font-weight:600">Portions left after tonight</span>
+        <span class="step"><span class="b">−</span><b>2</b><span class="b">＋</span></span>
+      </div>
+      <p class="xs">Eat by Sunday · will surface as tomorrow's first suggestion</p>
+    </div>
+    <p class="t2">How was it?</p>
+    <div class="row" style="margin-bottom:14px">
+      <span class="xs m">You</span><span class="chips"><span class="chip xxs on">Loved</span><span class="chip xxs">Fine</span><span class="chip xxs">Meh</span></span>
+      <span class="xs m">Partner</span><span class="chips"><span class="chip xxs">Loved</span><span class="chip xxs on">Fine</span><span class="chip xxs">Meh</span></span>
+    </div>
+    <p class="t2">One-line note</p>
+    <div style="border:1px solid var(--bd);border-radius:9px;padding:8px 12px;font-size:14px;margin-bottom:16px">cap soy at 2 tbsp — confirmed</div>
+    <span class="btn wide">Save · update inventory</span>
+    <p class="foot" style="border:none">Saving deducts ingredients, adds 2 fridge portions, sets this recipe's time to your ~35 min</p>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> Time chips: "about right" echoes the current best estimate; alternatives derive from past logs so the common case never needs a keyboard. Fridge requires portions; freezer forbids them (data-model invariant). Reactions are optional and feed repeat-affinity scoring per person — solo-night suggestions can lean toward dishes only one of you loves. Every cook log decrements inventory by recipe quantities (the cook-log → inventory loop is mandatory).
+  </div>
+</section>
+
+<section id="into">
+  <h2>13 · Currently into — obsessions, tiers, memory</h2>
+  <p class="cap">Active obsessions with visible weights; auto-detected candidates ask before leaning in; the always-on tier sits apart; the history log is a quiet memory artifact (serif).</p>
+  <div class="phone">
+    <div class="row" style="margin-bottom:14px">
+      <p class="t1">Currently into</p><span class="btn xs">＋ Add</span>
+    </div>
+    <div class="card">
+      <div class="row" style="margin-bottom:6px"><span class="sm" style="font-weight:600">Shelled edamame</span><span class="xs" style="color:var(--plum)">×1.8 · since May 19</span></div>
+      <div class="bar"><i style="width:90%"></i></div>
+    </div>
+    <div class="card">
+      <div class="row" style="margin-bottom:6px"><span class="sm" style="font-weight:600">Anchovies</span><span class="xs" style="color:var(--plum)">×1.3 · since Jun 1</span></div>
+      <div class="bar"><i style="width:65%"></i></div>
+    </div>
+    <div class="card" style="opacity:.65">
+      <div class="row" style="margin-bottom:6px"><span class="sm">Gochujang</span><span class="xs h">×0.4 · fading — removed May 30</span></div>
+      <div class="bar"><i style="width:20%;background:var(--bd2)"></i></div>
+    </div>
+    <div class="banner" style="background:var(--plumbg);color:var(--plum);margin:14px 0">
+      <p class="xs" style="margin-bottom:8px">Rice vinegar bought 4× in 3 weeks. Lean into it for a while?</p>
+      <span class="btn xs">Yes, lean in</span> <span class="btn xs">No, just stocking up</span>
+    </div>
+    <p class="t2">Always-on tier</p>
+    <div class="chips" style="margin-bottom:16px">
+      <span class="chip">Garlic</span><span class="chip">Lemons</span><span class="chip">Scallions</span>
+    </div>
+    <p class="t2">Not into</p>
+    <div class="chips" style="margin-bottom:16px">
+      <span class="chip">Blue cheese · always</span><span class="chip">Heavy soups · right now</span>
+    </div>
+    <p class="t2" style="border-top:1px solid var(--bd);padding-top:14px">Past obsessions</p>
+    <p class="sm serif h" style="line-height:1.9">May 2026 — gochujang<br>Jan 2026 — anchovies<br>Nov 2025 — miso butter<br>Sep 2025 — tomato confit</p>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> Obsession weights multiply matching-ingredient scores; removal starts decay rather than a hard cut. "Not right now" entries are negative obsessions on the same machinery. Auto-detect fires at 4+ purchases in 3 weeks with the stocking-up decline path. History rows are never deleted — ended_at set, row kept (the memory artifact). Allergies live in Settings, not here — they're a safety filter, not a preference.
+  </div>
+</section>
+
+<section id="import">
+  <h2>14 · Recipes › Import — confirmation before saving</h2>
+  <p class="cap">URL paste and manual entry ship first; cookbook batch parsing is its own sub-project. Either way, nothing saves without confirmation — parse confidence is honest, and low-confidence recipes get a side-by-side review.</p>
+  <div class="phone">
+    <p class="t1" style="margin-bottom:14px">Import cookbook</p>
+    <div class="card row">
+      <span style="flex:1">
+        <p class="sm" style="font-weight:600">the-wok-recipes.epub</p>
+        <p class="xxs h">14.2 MB · parsed in 3 min (batch)</p>
+      </span>
+      <span class="chip xxs" style="background:var(--herbbg);border-color:var(--herbbg);color:var(--herb)">38 recipes found</span>
+    </div>
+    <p class="xs m" style="margin:4px 0 10px">Confirm before saving — 36 parsed cleanly, 2 need a look.</p>
+    <div class="card">
+      <div class="row" style="margin-bottom:6px"><span class="sm" style="font-weight:600">Sichuan-style blistered green beans</span><span style="color:var(--green)">✓</span></div>
+      <div class="chips"><span class="chip xxs">wok</span><span class="chip xxs">cleanup: med (oil splatter)</span><span class="chip xxs">15 min</span><span class="chip xxs">dinner</span><span class="chip xxs">~9 g protein est.</span></div>
+    </div>
+    <div class="card">
+      <div class="row" style="margin-bottom:6px"><span class="sm" style="font-weight:600">Kung pao chicken</span><span style="color:var(--green)">✓</span></div>
+      <div class="chips"><span class="chip xxs">wok</span><span class="chip xxs">cleanup: med</span><span class="chip xxs">25 min</span><span class="chip xxs red">⚠ peanuts</span></div>
+    </div>
+    <div class="card" style="background:var(--amberbg);border-color:#E8CFA4">
+      <div class="row" style="margin-bottom:4px"><span class="sm" style="font-weight:600;color:var(--amber)">Mapo tofu (two-page spread)</span><span style="color:var(--amber)">⚠</span></div>
+      <p class="xs" style="color:var(--amber);margin-bottom:8px">Ingredient quantities split across pages — amounts may be wrong.</p>
+      <span class="btn xs">Review side by side</span> <span class="btn xs">Skip</span>
+    </div>
+    <p class="xxs h" style="text-align:center;margin:8px 0 12px">+ 35 more parsed cleanly</p>
+    <span class="btn wide">Save 36 confirmed recipes</span>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> Auto-tags (vessel, cleanup, time, genre, meal types, allergen flags, protein/fiber estimates) are computed in the same batch pass as parsing — once, stored, never re-derived. Allergen hits against the household's allergy tier (peanuts, tree nuts) get the red flag and save as excluded-by-default; opening one directly shows a warning badge. URL import is this same flow with a single-recipe confirmation card.
+  </div>
+</section>
+
+<section id="settings">
+  <h2>15 · Settings — household, stores, safety, body</h2>
+  <p class="cap">Touched twice a year, reached via the gear on Today. Address feeds router drive-time; stores are ranked defaults plus tagged specialty; allergies are the hard filter; body metrics drive the personal DV math; meal windows and the kitchen-zone layout live here too.</p>
+  <div class="phone">
+    <p class="t1" style="margin-bottom:14px">Household</p>
+    <p class="t2">Home address</p>
+    <div style="border:1px solid var(--bd);border-radius:9px;padding:8px 12px;font-size:14px;margin-bottom:16px">1742 Willow Creek Dr, Lexington, KY</div>
+    <p class="t2">Stores — default order</p>
+    <div class="list" style="margin-bottom:8px">
+      <div class="row"><span class="sm">⠿ &nbsp;1 · Walmart — Richmond Rd</span><span class="chip xxs">default</span></div>
+      <div class="row"><span class="sm">⠿ &nbsp;2 · Trader Joe's</span></div>
+      <div class="row"><span class="sm">⠿ &nbsp;3 · Kroger</span></div>
+    </div>
+    <p class="xs m" style="margin-bottom:6px">Specialty — used when their thing comes up</p>
+    <div class="chips" style="margin-bottom:18px">
+      <span class="chip">HMart · Asian</span><span class="chip">Costco · bulk</span><span class="chip">Farmers market · Sat produce</span><span class="chip" style="border-style:dashed">＋ add</span>
+    </div>
+    <p class="t2">Allergies — hard filter</p>
+    <div class="chips" style="margin-bottom:4px">
+      <span class="chip red">⊘ Peanuts</span><span class="chip red">⊘ Tree nuts</span>
+    </div>
+    <p class="xxs h" style="margin-bottom:18px">Never suggested anywhere. Imports containing these get flagged, including "may contain".</p>
+    <p class="t2">Body &amp; nutrition targets</p>
+    <div class="list" style="margin-bottom:6px">
+      <div class="row"><span class="sm m">Weight</span><span class="sm">72 kg</span></div>
+      <div class="row"><span class="sm m">Height</span><span class="sm">175 cm <span class="xxs h">(stored for later — V1 uses weight only)</span></span></div>
+      <div class="row"><span class="sm m">Protein</span><span class="sm">0.8 g/kg → <b>58 g</b> daily</span></div>
+      <div class="row"><span class="sm m">Fiber</span><span class="sm"><b>28 g</b> daily (default DV)</span></div>
+    </div>
+    <p class="xxs h" style="margin-bottom:18px">Targets power the per-meal % DV chips. No daily totals are tracked.</p>
+    <p class="t2">Meal windows</p>
+    <div class="list" style="margin-bottom:18px">
+      <div class="row"><span class="sm m">Breakfast</span><span class="sm">5:00 am – 11:00 am</span></div>
+      <div class="row"><span class="sm m">Lunch</span><span class="sm">11:00 am – 3:00 pm</span></div>
+      <div class="row"><span class="sm m">Dinner</span><span class="sm">3:00 pm – 11:00 pm</span></div>
+      <div class="row"><span class="sm m">Late-night snack</span><span class="sm">11:00 pm – 5:00 am</span></div>
+    </div>
+    <div class="list">
+      <div class="row"><span class="sm m">Kitchen layout</span><span class="xs" style="text-decoration:underline">edit zones ›</span></div>
+      <div class="row"><span class="sm m">Data status</span><span class="xs">Walmart 2d · garden 1h · LLM spend $0.41/mo</span></div>
+    </div>
+  </div>
+  <div class="ann">
+    <b>Behavior.</b> Store rank is drag-to-reorder; specialty entries carry tags the router matches against item categories and active obsessions. Protein multiplier is editable 0.8–1.6 g/kg; V1 assumes shared targets for the household (open question §15 in requirements). The kitchen layout editor defines compartments and ordered, labeled zones — the map screen renders whatever is defined here. LLM monthly spend surfaces here from the llm_jobs log.
+  </div>
+</section>
+
+<footer style="border-top:1px solid var(--bd2);padding-top:24px;color:var(--ink3);font-size:12px;max-width:660px">
+  End of mockups. Precedence: requirements.md › data-model.md › this file. Mobile is the only mocked breakpoint; ≥768px promotes to two columns without component changes (requirements §2).
+</footer>
+
+</div>
+</body>
+</html>
